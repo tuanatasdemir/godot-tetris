@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cerw3e6asohc2"]
+
+[ext_resource type="Script" uid="uid://d2nfwyvp8hswj" path="res://scripts/loot_locker.gd" id="1_vbo0w"]
+
+[node name="LootLocker" type="HTTPRequest"]
+script = ExtResource("1_vbo0w")
+
+[connection signal="request_completed" from="." to="." method="_on_request_completed"]

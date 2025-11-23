@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc64dhhsa5wo1"]
+
+[ext_resource type="Script" uid="uid://cheouphm21mmw" path="res://scripts/tetromino.gd" id="1_yvmc8"]
+[ext_resource type="AudioStream" uid="uid://cyqt5uxw7437g" path="res://sounds/hallopiki-Click-1.mp3" id="2_hotfb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pfwv7"]
+size = Vector2(32, 32)
+
+[node name="Tetromino" type="Node2D"]
+script = ExtResource("1_yvmc8")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Blok0" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_pfwv7")
+centered = false
+
+[node name="Blok1" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_pfwv7")
+centered = false
+
+[node name="Blok2" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_pfwv7")
+centered = false
+
+[node name="Blok3" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_pfwv7")
+centered = false
+
+[node name="Blok4" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_pfwv7")
+centered = false
+
+[node name="DonmeSesi" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hotfb")
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
